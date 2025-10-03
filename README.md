@@ -1,3 +1,4 @@
+
 # 🏘️ Community Issue Tracker
 
 A simple, **role-based web application** that allows local residents to report community issues, authorities to manage them, and administrators to verify authority accounts. Built for hackathon purposes with a focus on **speed, usability, and clarity**.  
@@ -57,21 +58,29 @@ A simple, **role-based web application** that allows local residents to report c
 ```bash
 git clone https://github.com/Alan21303/community-issue-tracker.git
 cd community-issue-tracker
+````
 
-2. Configure the Database
+### 2. Configure the Database
 
-Update appsettings.json with your PostgreSQL connection string:
+Update `appsettings.json` with your PostgreSQL connection string:
 
+```json
 "ConnectionStrings": {
   "DefaultConnection": "Host=localhost;Port=5432;Database=communitytracker;Username=postgres;Password=yourpassword"
 }
-3. Run Migrations
-dotnet ef database update
+```
 
-4. Seed Admin User (optional)
+### 3. Run Migrations
+
+```bash
+dotnet ef database update
+```
+
+### 4. Seed Admin User (optional)
 
 You can add an admin directly via code or SQL:
 
+```csharp
 new User {
     Name = "Super Admin",
     Email = "admin@tracker.com",
@@ -79,30 +88,56 @@ new User {
     Role = "Admin",
     IsVerified = true
 }
+```
 
-5. Run the Application
+### 5. Run the Application
+
+```bash
 dotnet run
+```
 
-6. Access Frontend
+### 6. Access Frontend
 
 Open browser and navigate to:
-http://localhost:5000/index.html
+[http://localhost:5000/index.html](http://localhost:5000/index.html)
 
-🚀 Usage
-User
+---
 
-Register and submit new reports with images/videos.
+## 🚀 Usage
 
-View all reports, filter by tags, category, or status.
+### User
 
-Authority
+* Register and submit new reports with images/videos.
+* View all reports, filter by tags, category, or status.
 
-Must be verified by an admin to log in.
+### Authority
 
-View submitted reports and update status (Submitted → Reviewed → Resolved).
+* Must be verified by an admin to log in.
+* View submitted reports and update status (`Submitted → Reviewed → Resolved`).
 
-Admin
+### Admin
 
-Approve pending authorities.
+* Approve pending authorities.
+* View and manage all reports.
 
-View and manage all reports.
+---
+
+
+---
+
+## 🔮 Future Enhancements
+
+* Notifications when report status changes
+* Commenting system for users and authorities
+* Map integration to visualize issues
+* Like or vote system for important community issues
+* Email verification for users/authorities
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+```
+```
