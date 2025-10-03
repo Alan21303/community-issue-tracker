@@ -80,20 +80,27 @@ namespace CommunityTracker.Controllers
         // ====== Get Reports (All Users) ======
         [HttpGet]
         [Authorize] // all logged in users
-public async Task<IActionResult> GetReports([FromQuery] string? status = null, [FromQuery] string? category = null)
-        {
-            var query = _db.Reports
-                        .Include(r => r.Media)
-                        .Include(r => r.ReportTags).ThenInclude(rt => rt.Tag)
-                        .Include(r => r.CreatedByUser)
-                        .AsQueryable();
+[HttpGet]
+[Authorize]
+public async Task<IActionResult> GetReports([FromQuery] string? status=null, [FromQuery] string? category=null, [FromQuery] string? tag=null)
+{
+    var query = _db.Reports
+                .Include(r => r.Media)
+                .Include(r => r.ReportTags).ThenInclude(rt => rt.Tag)
+                .Include(r => r.CreatedByUser)
+                .AsQueryable();
 
-            if(!string.IsNullOrEmpty(status)) query = query.Where(r => r.Status == status);
-            if(!string.IsNullOrEmpty(category)) query = query.Where(r => r.Category == category);
+    if(!string.IsNullOrEmpty(status)) query = query.Where(r => r.Status == status);
+    if(!string.IsNullOrEmpty(category)) query = query.Where(r => r.Category == category);
+    if(!string.IsNullOrEmpty(tag))
+    {
+        var tagLower = tag.ToLower();
+        query = query.Where(r => r.ReportTags.Any(rt => rt.Tag.Name.Contains(tagLower)));
+    }
 
-            var reports = await query.OrderByDescending(r => r.CreatedAt).ToListAsync();
-            return Ok(reports);
-        }
+    var reports = await query.OrderByDescending(r => r.CreatedAt).ToListAsync();
+    return Ok(reports);
+}
 
         // ====== Update Report Status (Authorities Only) ======
         [HttpPut("{id}/status")]
