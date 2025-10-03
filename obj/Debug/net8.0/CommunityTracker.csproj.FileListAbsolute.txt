@@ -142,3 +142,4 @@ C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.
 C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.pdb
 C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.genruntimeconfig.cache
 C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\ref\CommunityTracker.dll
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\bin\Debug\net8.0\CommunityTracker.staticwebassets.runtime.json

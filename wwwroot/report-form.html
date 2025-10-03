@@ -1,0 +1,62 @@
+<!-- File: wwwroot/report-form.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Report</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Create New Report</h2>
+      <form id="reportForm" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" required /><br />
+        <textarea
+          name="description"
+          placeholder="Description"
+          required
+        ></textarea
+        ><br />
+        <input
+          type="text"
+          name="category"
+          placeholder="Category"
+          required
+        /><br />
+        <input
+          type="text"
+          name="locationText"
+          placeholder="Location"
+          required
+        /><br />
+        <input
+          type="text"
+          name="tags"
+          placeholder="Tags (comma-separated)"
+        /><br />
+        <input type="file" name="files" multiple /><br />
+        <button type="submit">Submit</button>
+      </form>
+      <p id="msg"></p>
+    </div>
+    <script>
+      const token = localStorage.getItem("token");
+      if (!token) window.location.href = "index.html";
+
+      document
+        .getElementById("reportForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const formData = new FormData(form);
+          const res = await fetch("/api/reports", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${token}` },
+            body: formData,
+          });
+          const data = await res.json();
+          document.getElementById("msg").innerText = res.ok
+            ? "Report submitted!"
+            : JSON.stringify(data);
+        });
+    </script>
+  </body>
+</html>

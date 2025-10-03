@@ -37,6 +37,13 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5000); // HTTP
+    options.ListenAnyIP(5001, listenOptions => listenOptions.UseHttps()); // HTTPS
+});
 // ----------------------------
 // Configure EF Core
 // ----------------------------

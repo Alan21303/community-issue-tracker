@@ -1,0 +1,36 @@
+<!-- File: wwwroot/dashboard.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Community Tracker - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Dashboard</h2>
+      <div id="filters">
+        <input type="text" id="tagFilter" placeholder="Search by tag" />
+        <select id="statusFilter">
+          <option value="">All Status</option>
+          <option value="Submitted">Submitted</option>
+          <option value="Reviewed">Reviewed</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Roads">Roads</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Garbage">Garbage</option>
+          <option value="Lighting">Lighting</option>
+        </select>
+        <button id="applyFilters">Filter</button>
+      </div>
+
+      <button id="newReportBtn">Create New Report</button>
+
+      <div id="reportsContainer"></div>
+
+      <script src="js/dashboard.js"></script>
+    </div>
+  </body>
+</html>
