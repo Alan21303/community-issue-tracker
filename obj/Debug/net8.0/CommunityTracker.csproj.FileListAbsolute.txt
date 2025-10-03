@@ -1,0 +1,7 @@
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.AssemblyInfo.cs
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DELL\Desktop\PROJECTS\CommunityTracker\CommunityTracker\obj\Debug\net8.0\CommunityTracker.MvcApplicationPartsAssemblyInfo.cache
